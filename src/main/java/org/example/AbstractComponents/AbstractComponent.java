@@ -3,15 +3,13 @@ package org.example.AbstractComponents;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 public abstract class AbstractComponent {
-    private WebElement SectionElement;
+    private final WebElement SectionElement;
     WebDriver driver;
 
     public AbstractComponent(WebDriver webdriver, By Section) {
