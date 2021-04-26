@@ -1,29 +1,26 @@
 package org.example;
 
-
 import org.example.PageObjects.TravelHomePage;
 import org.example.TestData.Cities;
 import org.example.TestData.DataReader;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.TestNGException;
+import org.testng.ITestContext;
 import org.testng.annotations.*;
-
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+@Listeners(org.example.ListenerTestNG.class)
 public class TravelTests extends Initilization{
     WebDriver driver;
 
     @BeforeMethod
     @Parameters("browser")
-    public void BeforeTest(String browser){
-        driver = initilizeDriver(browser);
+    public void BeforeTest(String browser, ITestContext context){
+        driver = initilizeDriver(browser, context);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
