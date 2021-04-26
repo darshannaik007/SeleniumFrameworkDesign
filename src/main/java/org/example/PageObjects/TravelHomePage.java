@@ -6,7 +6,6 @@ import org.example.PageComponents.FooterNavigation;
 import org.example.PageComponents.NavigationBar;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
