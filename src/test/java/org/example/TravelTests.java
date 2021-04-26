@@ -53,15 +53,11 @@ public class TravelTests extends Initilization{
         Assert.assertEquals("text-label", name, "Flight name irrelevant");
     }
 
-    @Test(dataProvider = "getData")
+    @Test(dataProvider = "getData", enabled = false)
     public void Test3(List<HashMap<String, String>> cities)  {
         TravelHomePage home = new TravelHomePage(driver);
         home.goTo();
         home.setBookingStrategy("roundtrip");
-        /*Map<String, String> reservation = new HashMap<String, String>();
-        reservation.put("origin1", Cities.source1);
-        reservation.put("destination1", Cities.destination1);
-        */
         home.checkAvailiblity(cities, null);
 
     }

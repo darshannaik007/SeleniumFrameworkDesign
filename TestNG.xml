@@ -6,9 +6,9 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="org.example.TravelTests">
-             <methods>
+           <!--  <methods>
                 <include name="Test3" />
-             </methods>
+             </methods> -->
      </class>
  </classes>
 </test> <!-- Default test -->
