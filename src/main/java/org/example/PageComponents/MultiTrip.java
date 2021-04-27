@@ -29,8 +29,6 @@ public class MultiTrip extends AbstractComponent implements FlightAvail {
         this.driver=driver1;
     }
 
-
-
     @Override
     public void checkAvail(List<HashMap<String, String>> reservation1, Map<String, String> reservation2){
         makeStateReady(s -> selectOriginCity(reservation2.get("origin1")));
