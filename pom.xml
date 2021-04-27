@@ -82,7 +82,7 @@
           <version>2.22.1</version>
           <configuration>
             <suiteXmlFiles>
-              <suiteXmlFile>C:\Users\Darshan Naik\git\Appium\AppiumTest\TestNG.xml</suiteXmlFile>
+              <suiteXmlFile>C:\Users\Darshan Naik\IdeaProjects\Alpha\TestNG.xml</suiteXmlFile>
             </suiteXmlFiles>
           </configuration>
         </plugin>
