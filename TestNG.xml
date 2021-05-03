@@ -8,11 +8,12 @@
 
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="org.example.TravelTests1">
+            <class name="org.example.TravelTests1"/>
+            <class name="org.example.TravelTests2"/>
            <!--  <methods>
                 <include name="Test3" />
              </methods> -->
-     </class>
+
  </classes>
 </test> <!-- Default test -->
 </suite> <!-- Default suite -->

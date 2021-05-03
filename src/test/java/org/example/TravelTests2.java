@@ -1,29 +1,19 @@
 package org.example;
 
 import org.example.PageObjects.TravelHomePage;
+import org.example.Setup.BaseTest;
 import org.example.Setup.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class TravelTests2 {
+public class TravelTests2 extends BaseTest {
     WebDriver driver;
     //This Test suit gives us an idea of how to run the tests in parallel
 
-    @BeforeMethod
-    @Parameters("browser")
-    public void setInstance(String browser){
-        driver = DriverFactory.getInstance().getDriver(browser);
-    }
-
-    @AfterClass
-    public void tearDown(){
-        driver.close();
-    }
-
     @Test
     public void Test1(){
-
+        WebDriver driver = getDriver();
         TravelHomePage home = new TravelHomePage(driver);
         home.goTo();
         String name = home.getFooterNavigation().getFlightName();
