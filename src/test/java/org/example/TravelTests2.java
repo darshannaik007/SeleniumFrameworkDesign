@@ -4,20 +4,26 @@ import org.example.PageObjects.TravelHomePage;
 import org.example.Setup.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
-public class ParallelTests {
-
+public class TravelTests2 {
+    WebDriver driver;
     //This Test suit gives us an idea of how to run the tests in parallel
-    @BeforeClass
-    public void Setup(){
-        System.setProperty("webdriver.chrome.driver","C:\\Software\\Selenium\\chromedriver.exe");
+
+    @BeforeMethod
+    @Parameters("browser")
+    public void setInstance(String browser){
+        driver = DriverFactory.getInstance().getDriver(browser);
+    }
+
+    @AfterClass
+    public void tearDown(){
+        driver.close();
     }
 
     @Test
     public void Test1(){
-        WebDriver driver = DriverFactory.getInstance().getDriver();
+
         TravelHomePage home = new TravelHomePage(driver);
         home.goTo();
         String name = home.getFooterNavigation().getFlightName();
@@ -29,7 +35,7 @@ public class ParallelTests {
 
     @Test
     public void Test2(){
-        WebDriver driver = DriverFactory.getInstance().getDriver();
+        WebDriver driver = DriverFactory.getInstance().getDriver("chrome");
         TravelHomePage home = new TravelHomePage(driver);
         home.goTo();
         String name = home.getNavigationBar().getName();

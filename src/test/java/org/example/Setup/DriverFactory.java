@@ -2,6 +2,8 @@ package org.example.Setup;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class DriverFactory {
     //Singleton Design Pattern
@@ -15,14 +17,26 @@ public class DriverFactory {
     }
 
     //Factory Design Pattern
-    private static ThreadLocal<WebDriver> threadLocal = new ThreadLocal<WebDriver>(){
+    private static ThreadLocal<WebDriver> threadLocal = new ThreadLocal<WebDriver>();
 
-        protected WebDriver initialValue(){
-            return new ChromeDriver();
+    public WebDriver getDriver(String browser){
+        if(threadLocal.get()==null){
+            switch (browser){
+                case "chrome":  System.setProperty("webdriver.chrome.driver","C:\\Software\\Selenium\\chromedriver.exe");
+                                System.out.println("******************************: Done");
+                                threadLocal.set(new ChromeDriver());
+                                break;
+                case "firefox":
+                                threadLocal.set(new FirefoxDriver());
+                                break;
+                case "ie":
+                            threadLocal.set(new InternetExplorerDriver());
+                            break;
+
+                default: break;
+
+            }
         }
-    };
-
-    public WebDriver getDriver(){
         return threadLocal.get();
     }
 }
