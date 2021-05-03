@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 @Listeners(ListenerTestNG.class)
 public class TravelTests extends Initilization {
+
     //This test suit gives us an idea of how to run the tests in multiple browser and Captures the Screenshot on test failure
     WebDriver driver;
 
