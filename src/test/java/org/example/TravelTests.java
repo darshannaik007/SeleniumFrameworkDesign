@@ -1,6 +1,8 @@
 package org.example;
 
 import org.example.PageObjects.TravelHomePage;
+import org.example.Setup.Initilization;
+import org.example.Setup.ListenerTestNG;
 import org.example.TestData.Cities;
 import org.example.TestData.DataReader;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +15,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-@Listeners(org.example.ListenerTestNG.class)
-public class TravelTests extends Initilization{
+@Listeners(ListenerTestNG.class)
+public class TravelTests extends Initilization {
+    //This test suit gives us an idea of how to run the tests in multiple browser and Captures the Screenshot on test failure
     WebDriver driver;
 
     @BeforeMethod
